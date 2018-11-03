@@ -8,9 +8,19 @@
 </template>
 
 <script>
+  import {mapActions} from 'vuex'
   import FooterGuide from './components/FooterGuide/FooterGuide.vue'
   // 引入底部组件并注册
   export default {
+
+    mounted() {
+      // this.$store.dispatch('getAddress')
+      this.getAddress()
+    },
+    methods: {
+      ...mapActions(['getAddress'])
+    },
+
     components: {
       FooterGuide
     }
